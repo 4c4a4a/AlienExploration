@@ -53,27 +53,12 @@ class Player(pygame.sprite.Sprite):
 
     def load_images(self):  # 创建人物各个状态下各种帧的图片列表
         sheet = setup.GRAPHICS['mario_bros']  # 获取图片
-        frame_rects = self.player_data['image_frames']  # 获取人物角色帧造型矩形
-
-        self.right_small_normal_frames = []  # 普通状态下 向右
-        # self.right_big_normal_frames = []
-        # self.right_big_fire_frames = []
+        frame_rects = self.player_data['image_frames']
+        self.right_small_normal_frames = []
         self.left_small_normal_frames = []
-        # self.left_big_normal_frames = []
-        # self.left_big_fire_frames = []
+        self.small_normal_frames = [self.right_small_normal_frames, self.left_small_normal_frames]
 
-        self.small_normal_frames = [self.right_small_normal_frames, self.left_small_normal_frames]  # 将向左向右设为两组
-        # self.big_normal_frames = [self.right_big_normal_frames, self.left_big_normal_frames]
-        # self.big_fire_frames = [self.right_big_fire_frames, self.left_big_fire_frames]
-
-        self.all_frames = [  # 所有帧的列表
-            self.right_small_normal_frames,
-            # self.right_big_normal_frames,
-            # self.right_big_fire_frames,
-            self.left_small_normal_frames,
-            # self.left_big_normal_frames,
-            # self.left_big_fire_frames,
-        ]
+        self.all_frames = [self.right_small_normal_frames,self.left_small_normal_frames,]
 
         self.right_frames = self.right_small_normal_frames  # 初始状态为小
         self.left_frames = self.left_small_normal_frames  # 初始状态为小
@@ -83,16 +68,8 @@ class Player(pygame.sprite.Sprite):
                 right_image = tools.get_image(sheet, frame_rect['x'], frame_rect['y'],
                                               frame_rect['width'], frame_rect['height'], (0, 0, 0), C.PLAYER_MULTI)  # 加载向右图片
                 left_image = pygame.transform.flip(right_image, True, False)  # 加载向左图片
-                # if group == 'right_small_normal':
                 self.right_small_normal_frames.append(right_image)
                 self.left_small_normal_frames.append(left_image)
-                # if group == 'right_big_normal':
-                #     self.right_big_normal_frames.append(right_image)
-                #     self.left_big_normal_frames.append(left_image)
-                # if group == 'right_big_fire':
-                #     self.right_big_fire_frames.append(right_image)
-                #     self.left_big_fire_frames.append(left_image)
-
         self.frame_index = 0
         self.frames = self.right_frames
         self.image = self.frames[self.frame_index]
@@ -104,9 +81,7 @@ class Player(pygame.sprite.Sprite):
         self.handle_states(keys)  # 处理各种状态
 
     def handle_states(self, keys):
-
         self.can_jump_or_not(keys)  # 检测角色是否可以跳起
-        # 运动状态
         if self.state == 'stand':
             self.stand(keys)
         elif self.state == 'walk':
@@ -117,11 +92,7 @@ class Player(pygame.sprite.Sprite):
             self.fall(keys)
         elif self.state == 'die':
             self.die(keys)
-
-        # if self.face_right:  # 面向右边就用右边的帧
         self.image = self.right_frames[self.frame_index]
-        # else:
-        #     self.image = self.left_frames[self.frame_index]
 
     def can_jump_or_not(self, keys):
         if not keys[pygame.K_a] or self.volumn < C.VOLUMN_THRESHOLD:
@@ -134,9 +105,6 @@ class Player(pygame.sprite.Sprite):
         if keys[pygame.K_RIGHT]:
             self.face_right = True
             self.state = 'walk'
-        # elif keys[pygame.K_LEFT]:
-        #     self.face_right = False
-        #     self.state = 'walk'
         elif keys[pygame.K_a] and self.can_jump:
             self.state = 'jump'
             self.y_vel = self.jump_vel
@@ -145,14 +113,6 @@ class Player(pygame.sprite.Sprite):
             self.y_vel = self.jump_vel
 
     def walk(self, keys):
-
-        # if keys[pygame.K_s]:
-        #     self.max_x_vel = self.max_run_vel
-        #     self.x_accel = self.run_accel
-        # else:
-        #     self.max_x_vel = self.max_walk_vel
-        #     self.x_accel = self.walk_accel
-
         if keys[pygame.K_a] and self.can_jump:
             self.state = 'jump'
             self.y_vel = self.jump_vel
@@ -166,31 +126,11 @@ class Player(pygame.sprite.Sprite):
             else:
                 self.frame_index = 1
             self.walking_timer = self.current_time
-        #if keys[pygame.K_RIGHT]:  # 按下按键时一直向右走
         self.face_right = True
         if self.x_vel < 0:
             self.frame_index = 5
             self.x_accel = self.turn_accel
         self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, True)
-        # elif keys[pygame.K_LEFT]:
-        #     self.face_right = False
-        #     if self.x_vel > 0:
-        #         self.frame_index = 5
-        #         self.x_accel = self.turn_accel
-        #     self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, False)
-
-        # else:  # 没按下则停下
-        #     #if self.face_right:
-        #     self.x_vel -= self.x_accel
-        #     if self.x_vel < 0:
-        #         self.x_vel = 0
-        #         self.state = 'stand'
-
-            # else:
-            #     self.x_vel += self.x_accel
-            #     if self.x_vel > 0:
-            #         self.x_vel = 0
-            #         self.state = 'stand'
 
     def jump(self, keys):
         self.frame_index = 4
@@ -200,10 +140,7 @@ class Player(pygame.sprite.Sprite):
         if self.y_vel >= 0:
             self.state = 'fall'
 
-        # if keys[pygame.K_RIGHT]:
         self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, True)
-        # elif keys[pygame.K_LEFT]:
-        #     self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, False)
 
         if not keys[pygame.K_a] and self.volumn < C.VOLUMN_THRESHOLD:  # 没按下跳跃键时 转为下落状态
             self.state = 'fall'
@@ -211,10 +148,7 @@ class Player(pygame.sprite.Sprite):
     def fall(self, keys):
         self.y_vel = self.calc_vel(self.y_vel, self.gravity, self.max_y_vel)
 
-        #if keys[pygame.K_RIGHT]:
         self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, True)
-        # elif keys[pygame.K_LEFT]:
-        #     self.x_vel = self.calc_vel(self.x_vel, self.x_accel, self.max_x_vel, False)
 
     def die(self, keys):
         self.rect.y += self.y_vel

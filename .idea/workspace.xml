@@ -1,7 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3c3b3f01-f487-4ce8-ae23-8b31cefe5cf9" name="默认变更列表" comment="" />
+    <list default="true" id="3c3b3f01-f487-4ce8-ae23-8b31cefe5cf9" name="默认变更列表" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/enemies.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/item_objects.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/level_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/graphics/level_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/level_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/level_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/level_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/smb_enemies_sheet.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/text_images.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/tile_set.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/title_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/graphics/title_screen.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/components/coin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/components/enemy.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/components/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/info.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/components/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/player.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/components/voice.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/voice.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/constants.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/constants.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/data/maps/level_2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/data/maps/level_3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/data/maps/level_4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/data/player/luigi.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/data/player/mario.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/data/player/mario.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/states/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/level.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/states/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/main_menu.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/tools.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/tools.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +42,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="GitSEFilterConfiguration">
     <file-type-list>
       <filtered-out-file-type name="LOCAL_BRANCH" />
@@ -23,6 +54,7 @@
     </file-type-list>
   </component>
   <component name="ProjectId" id="1qL6fb7BRhQjEyMVtKNjZOV9m7n" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -91,5 +123,26 @@
       <updated>1616846628328</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ID_ORDER">
+      <list>
+        <option value="Default.Root" />
+        <option value="Default.Author" />
+        <option value="Default.Date" />
+        <option value="Default.Subject" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

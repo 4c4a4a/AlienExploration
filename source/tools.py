@@ -11,7 +11,6 @@ class Game:
         self.state_dict = state_dict  # 状态字典
         self.state = self.state_dict[start_state]  # 初始化主菜单状态 在main_menu文件里 是一个值为类的字典
 
-
     def update(self):
         if self.state.finished:  # 检查当前阶段是否完成
             game_info = self.state.game_info  # 幅值当前阶段结束后游戏信息

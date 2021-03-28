@@ -10,7 +10,3 @@ def getVolumn():
     string_audio_data = stream.read(1000)
     volumn = max(struct.unpack('1000h', string_audio_data))
     return volumn
-
-
-while __name__ == '__main__':
-    print(getVolumn())

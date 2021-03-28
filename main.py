@@ -1,7 +1,6 @@
-# 游戏主要入口
-
 from source import tools
 from source.states import main_menu, load_screen, level
+
 
 def main():
     state_dict = {

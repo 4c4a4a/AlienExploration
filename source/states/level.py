@@ -53,10 +53,8 @@ class Level:
                 self.ground_items_group.add(stuff.Item(item['x'], item['y'], item['width'], item['height'], name))  # 加入组中
 
     def update(self, surface, keys):  # 被tools文件update调用进入level阶段
-
         self.current_time = pygame.time.get_ticks()  # 获取当前时间
         self.player.update(keys)  # 调用player文件中update 处理按键对应的状态
-
         if self.player.dead:
             if self.current_time - self.player.death_timer > 1600:
                 self.finished = True  # 进入下一个状态 game over
@@ -65,13 +63,9 @@ class Level:
             self.update_player_position()
             self.check_if_go_die()
             self.update_game_window()
-            # self.info.update()
-
         self.draw(surface)
 
     def update_player_position(self):
-
-        # x direction
         self.player.rect.x += self.player.x_vel
         if self.player.rect.x < self.start_x:
             self.player.rect.x = self.start_x
@@ -81,7 +75,6 @@ class Level:
             self.finished = True
         self.check_x_collisions()  # x方向碰撞检测
 
-        # y direction
         self.player.rect.y += self.player.y_vel
         self.check_y_collisions()  # y方向碰撞检测
 
@@ -104,16 +97,10 @@ class Level:
         self.player.x_vel = 0
 
     def adjust_player_y(self, sprite):
-        # downwards
         if self.player.rect.bottom < sprite.rect.bottom:
             self.player.y_vel = 0
             self.player.rect.bottom = sprite.rect.top
             self.player.state = 'walk'
-        # # upwards # 跳跃时向上碰到障碍
-        # else:
-        #     self.player.y_vel = 7
-        #     self.player.rect.top = sprite.rect.bottom
-        #     self.player.state = 'fall'
 
     def check_will_fall(self, sprite):
         sprite.rect.y += 1  # 试探性的进行检验是否要下落 将人物位置下调一个像素
