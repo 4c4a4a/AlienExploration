@@ -38,8 +38,6 @@ class Player(pygame.sprite.Sprite):
         self.max_y_vel = speed['max_y_velocity']  # 最大y轴速度
         self.jump_vel = speed['jump_velocity']  # 最大跳跃速度
         self.walk_accel = speed['walk_accel']  # 走路加速度
-        self.run_accel = speed['run_accel']  # 跑步加速度 不需要
-        self.turn_accel = speed['turn_accel']  # 转弯时的加速度 不需要
         self.gravity = C.GRAVITY  # 向上跳的重力
         self.anti_gravity = C.ANTI_GRAVITY  # 向下坠落的重力
 

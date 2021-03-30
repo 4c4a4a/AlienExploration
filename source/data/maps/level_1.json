@@ -6,9 +6,17 @@
         {"start_x":6740, "end_x": 9086, "player_x": 270, "player_y":450}
     ],
     "ground":[
-        {"x":   0, "y":538, "width":2953, "height":60},
-        {"x":3048, "y":538, "width": 635, "height":60},
-        {"x":3819, "y":538, "width":2735, "height":60},
+        {"x":   0, "y":538, "width":1313, "height":60},
+        {"x":1445, "y":538, "width": 782, "height":60},
+        {"x":2316, "y":538, "width": 517, "height":60},
+        {"x":2907, "y":370, "width":  72, "height":230},
+        {"x":3152, "y":538, "width": 531, "height":60},
+        {"x":3776, "y":423, "width": 394, "height":59},
+        {"x":4331, "y":538, "width": 214, "height":60},
+        {"x":4639, "y":426, "width":  99, "height":174},
+        {"x":4816, "y":311, "width": 104, "height":289},
+        {"x":5001, "y":222, "width":  78, "height":378},
+        {"x":5231, "y":538, "width":1327, "height":60},
         {"x":6647, "y":538, "width":3250, "height":60}
     ],
     "pipe":[

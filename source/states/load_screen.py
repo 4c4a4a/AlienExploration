@@ -20,7 +20,7 @@ class LoadScreen:
             self.timer = 0
 
     def draw(self, surface):  # 画图
-        surface.fill((8, 101, 139))  # 创建填满颜色的图层
+        surface.fill((0, 0, 0))  # 创建填满颜色的图层
         self.info.draw(surface)  # 在图层上绘画
 
 
