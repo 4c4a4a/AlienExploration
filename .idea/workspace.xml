@@ -4,10 +4,6 @@
     <list default="true" id="3c3b3f01-f487-4ce8-ae23-8b31cefe5cf9" name="默认变更列表" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/graphics/level_1.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/graphics/level_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/graphics/title_screen.png" beforeDir="false" afterPath="$PROJECT_DIR$/resources/graphics/title_screen.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/components/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/data/maps/level_1.json" beforeDir="false" afterPath="$PROJECT_DIR$/source/data/maps/level_1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/states/load_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/load_screen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
