@@ -153,6 +153,8 @@ class Player(pygame.sprite.Sprite):
         self.y_vel += self.anti_gravity
 
     def go_die(self):
+        pygame.mixer.music.load('resources/music/death_BGM.wav')
+        pygame.mixer.music.play(start=0.0)
         self.dead = True
         self.y_vel = self.jump_vel
         self.frame_index = 6

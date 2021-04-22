@@ -8,13 +8,18 @@ import json
 
 
 class Level:
+    # def __init__(self):
+    #     pygame.mixer.init()
+
     def start(self, game_info):  # 被tools文件update在切换阶段时调用
         self.game_info = game_info
         self.finished = False
+        self.check_win = False
         self.next = 'game_over'  # 设置下一阶段
         self.info = info.Info('level', self.game_info)  # 传入关卡信息
         self.load_map_data()  # 载入第一关里的地图json文件数据
         self.setup_background()  # 载入游戏背景
+        self.setup_music()  # 载入音乐
         self.setup_start_positions()  # 设置游戏开始的位置
         self.setup_player()  # 载入游戏角色
         self.setup_ground_items()  # 设置碰撞
@@ -52,11 +57,16 @@ class Level:
             for item in self.map_data[name]:  # 遍历对应地图数据里的各个物品
                 self.ground_items_group.add(stuff.Item(item['x'], item['y'], item['width'], item['height'], name))  # 加入组中
 
+    def setup_music(self):
+        pygame.mixer.music.load('resources/music/level_BGM.wav')
+        pygame.mixer.music.play(start=0.0)
+
     def update(self, surface, keys):  # 被tools文件update调用进入level阶段
         self.current_time = pygame.time.get_ticks()  # 获取当前时间
         self.player.update(keys)  # 调用player文件中update 处理按键对应的状态
         if self.player.dead:
             if self.current_time - self.player.death_timer > 1600:
+                pygame.mixer.music.stop()
                 self.finished = True  # 进入下一个状态 game over
                 self.update_game_info()  # 调用方法
         else:
@@ -71,7 +81,9 @@ class Level:
             self.player.rect.x = self.start_x
         elif self.player.rect.right > self.end_x:
             self.player.rect.right = self.end_x  # 到达地图边缘时禁止通过
-            self.next = 'game_over'  # TODO 到达终点后的临时解决办法
+            self.next = 'game_over'  # ------------ 到达终点后的临时解决办法
+            pygame.mixer.music.stop()
+            self.check_win = True
             self.finished = True
         self.check_x_collisions()  # x方向碰撞检测
 
@@ -124,6 +136,7 @@ class Level:
 
     def check_if_go_die(self):  # 被update调用
         if self.player.rect.y > C.SCREEN_H:  # 掉出地图外
+            pygame.mixer.music.stop()
             self.player.go_die()
 
     def update_game_info(self):  # 被update调用
@@ -133,3 +146,5 @@ class Level:
             self.next = 'game_over'  # 下一状态改为game over
         else:
             self.next = 'load_screen'  # 还有生命就继续进入加载阶段
+
+

@@ -1,4 +1,5 @@
 import pygame
+from ..states.level import Level
 from .. import constants as C
 from .. import setup, tools
 pygame.font.init()

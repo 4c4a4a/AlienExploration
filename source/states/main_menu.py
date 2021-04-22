@@ -1,4 +1,5 @@
 import pygame
+import os
 from .. import setup
 from .. import tools
 from .. import constants as C
@@ -14,12 +15,13 @@ class MainMenu:
             'player_state': 'small'
         }
         self.start(game_info)  # 初始化实例便调用start方法 传入游戏初始信息
+        pygame.mixer.init()
 
     def start(self, game_info):  # 实例创建时初始化调用
         self.game_info = game_info  # 游戏信息赋值
         self.setup_background()  # 调用创建游戏背景方法
         self.setup_player()  # 创建人物
-        # self.setup_cursor()  # 创建光标
+        self.setup_music()  # 设置声音
         self.info = info.Info('main_menu', self.game_info)  # 创建info文件里的Info实例
         self.finished = False  # 标志开始菜单是否完成的标志 True即进入下一个状态 即加载页面
         self.next = 'load_screen'  # 设置下一个状态
@@ -35,8 +37,13 @@ class MainMenu:
     def setup_player(self):  # 获取人物图像
         self.player_image = tools.get_image(setup.GRAPHICS['mario_bros'], 178, 32, 12, 16, (0, 0, 0), C.PLAYER_MULTI)
 
+    def setup_music(self):
+        pygame.mixer.music.load('resources/music/main_menu_BGM.wav')
+        pygame.mixer.music.play(start=0.0)
+
     def update_cursor(self, keys):  # 游戏菜单选项功能 被update调用
         if keys[pygame.K_RETURN]:  # 按下回车进入下一个状态
+            pygame.mixer.music.stop()
             self.reset_game_info()
             self.finished = True
 
