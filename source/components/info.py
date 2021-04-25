@@ -21,6 +21,8 @@ class Info:  # 信息实例 先在main_menu实例中的start中被创建
             self.player_image = tools.get_image(setup.GRAPHICS['mario_bros'], 178, 32, 12, 16, (0, 0, 0), C.BG_MULTI)  # 任务图像
         elif self.state == 'game_over':
             self.state_labels.append((self.create_label('GAME OVER'), (280, 250)))
+        elif self.state == 'win':
+            self.state_labels.append((self.create_label('YOU WIN!'), (280, 250)))
 
     def create_label(self, label, size=40, width_scale=1.25, height_scale=1.0):  # 创建标签时调用的函数
         font = pygame.font.SysFont(C.FONT, size)  # 设置字体 作为常量存储在constants文件中

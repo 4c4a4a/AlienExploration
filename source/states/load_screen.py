@@ -32,3 +32,18 @@ class GameOver(LoadScreen):
         self.duration = 2000
         self.timer = 0
         self.info = info.Info('game_over', self.game_info)
+
+class Win(LoadScreen):
+    def start(self, game_info):
+        self.game_info = game_info
+        self.finished = False
+        self.next = 'main_menu'
+        self.duration = 4700
+        self.timer = 0
+        self.setup_music()  # 载入音乐
+        self.info = info.Info('win', self.game_info)
+
+    def setup_music(self):
+        pygame.mixer.music.load('resources/music/win_BGM.wav')
+        pygame.mixer.music.play(start=0.0)
+

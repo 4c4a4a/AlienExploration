@@ -7,7 +7,8 @@ def main():
         'main_menu': main_menu.MainMenu(),
         'load_screen': load_screen.LoadScreen(),
         'level': level.Level(),
-        'game_over': load_screen.GameOver()
+        'game_over': load_screen.GameOver(),
+        'win': load_screen.Win()
     }
     game = tools.Game(state_dict, 'main_menu')
     game.run()

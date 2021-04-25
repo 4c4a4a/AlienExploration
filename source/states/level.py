@@ -14,7 +14,6 @@ class Level:
     def start(self, game_info):  # 被tools文件update在切换阶段时调用
         self.game_info = game_info
         self.finished = False
-        self.check_win = False
         self.next = 'game_over'  # 设置下一阶段
         self.info = info.Info('level', self.game_info)  # 传入关卡信息
         self.load_map_data()  # 载入第一关里的地图json文件数据
@@ -81,9 +80,8 @@ class Level:
             self.player.rect.x = self.start_x
         elif self.player.rect.right > self.end_x:
             self.player.rect.right = self.end_x  # 到达地图边缘时禁止通过
-            self.next = 'game_over'  # ------------ 到达终点后的临时解决办法
+            self.next = 'win'  # ------------ 到达终点后的临时解决办法
             pygame.mixer.music.stop()
-            self.check_win = True
             self.finished = True
         self.check_x_collisions()  # x方向碰撞检测
 

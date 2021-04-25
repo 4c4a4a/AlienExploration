@@ -2,39 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3c3b3f01-f487-4ce8-ae23-8b31cefe5cf9" name="默认变更列表" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/music/death_BGM.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/music/level_BGM.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/music/main_menu_BGM.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/music/win_BGM.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/death.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/flagpole.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/game_over.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/invincible.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/main_theme.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/main_theme_sped_up.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/out_of_time.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/stage_clear.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/music/world_clear.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/big_jump.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/brick_smash.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/bump.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/coin.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/count_down.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/fireball.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/kick.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/main_theme_sped_up.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/one_up.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/pipe.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/powerup.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/powerup_appears.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/small_jump.ogg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sound/stomp.ogg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/0level_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/mario_bros - 副本.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/mario_bros0.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/graphics/title_screen - 副本.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/source/components/info.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/info.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/components/player.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/components/player.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/sound.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/sound.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source/states/level.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/level.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/states/main_menu.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/main_menu.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/states/win.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/states/load_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/source/states/load_screen.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +49,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
