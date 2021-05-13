@@ -56,7 +56,7 @@ class Player(pygame.sprite.Sprite):
         self.left_small_normal_frames = []
         self.small_normal_frames = [self.right_small_normal_frames, self.left_small_normal_frames]
 
-        self.all_frames = [self.right_small_normal_frames,self.left_small_normal_frames,]
+        self.all_frames = [self.right_small_normal_frames,self.left_small_normal_frames]
 
         self.right_frames = self.right_small_normal_frames  # 初始状态为小
         self.left_frames = self.left_small_normal_frames  # 初始状态为小
@@ -64,7 +64,7 @@ class Player(pygame.sprite.Sprite):
         for group, group_frame_rects in frame_rects.items():
             for frame_rect in group_frame_rects:
                 right_image = tools.get_image(sheet, frame_rect['x'], frame_rect['y'],
-                                              frame_rect['width'], frame_rect['height'], (0, 0, 0), C.PLAYER_MULTI)  # 加载向右图片
+                                              frame_rect['width'], frame_rect['height'], (0, 0, 0), C.PLAYER_MULTI)
                 left_image = pygame.transform.flip(right_image, True, False)  # 加载向左图片
                 self.right_small_normal_frames.append(right_image)
                 self.left_small_normal_frames.append(left_image)

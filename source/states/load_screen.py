@@ -7,7 +7,7 @@ class LoadScreen:
         self.game_info = game_info  # 设置游戏幅值
         self.finished = False  # 设置游戏阶段为未完成
         self.next = 'level'  # 下一阶段为正式关卡
-        self.duration = 800  # 阶段持续时间间隔
+        self.duration = 2000  # 阶段持续时间间隔
         self.timer = 0  # 计时器
         self.info = info.Info('load_screen', self.game_info)  # 传入当前阶段和游戏信息
 
@@ -38,7 +38,7 @@ class Win(LoadScreen):
         self.game_info = game_info
         self.finished = False
         self.next = 'main_menu'
-        self.duration = 4700
+        self.duration = 4650
         self.timer = 0
         self.setup_music()  # 载入音乐
         self.info = info.Info('win', self.game_info)

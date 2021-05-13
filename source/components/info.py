@@ -19,18 +19,19 @@ class Info:  # 信息实例 先在main_menu实例中的start中被创建
         elif self.state == 'load_screen':
             self.state_labels.append((self.create_label('X    {}'.format(self.game_info['lives'])), (380, 280)))  # 生命
             self.player_image = tools.get_image(setup.GRAPHICS['mario_bros'], 178, 32, 12, 16, (0, 0, 0), C.BG_MULTI)  # 任务图像
+            self.state_labels.append((self.create_label("--Shout out to control the character's jump--"), (30, 530)))
         elif self.state == 'game_over':
-            self.state_labels.append((self.create_label('GAME OVER'), (280, 250)))
+            self.state_labels.append((self.create_label('GAME OVER'), (290, 280)))
         elif self.state == 'win':
-            self.state_labels.append((self.create_label('YOU WIN!'), (280, 250)))
+            self.state_labels.append((self.create_label('YOU WIN!'), (300, 260)))
 
-    def create_label(self, label, size=40, width_scale=1.25, height_scale=1.0):  # 创建标签时调用的函数
-        font = pygame.font.SysFont(C.FONT, size)  # 设置字体 作为常量存储在constants文件中
-        label_image = font.render(label, True, (255, 255, 255))  # 创建字体的图像
-        rect = label_image.get_rect()  # 获取字体图像的矩形
-        label_image = pygame.transform.scale(label_image, (int(rect.width * width_scale),  # 放缩字体图像
+    def create_label(self, label, size=40, width_scale=1.25, height_scale=1.0):
+        font = pygame.font.SysFont('arial.ttf', size)  # 设置字体
+        label_image = font.render(label, True, (255, 255, 255))
+        rect = label_image.get_rect()
+        label_image = pygame.transform.scale(label_image, (int(rect.width * width_scale),  # 放缩
                                                            int(rect.height * height_scale)))
-        return label_image  # 返回字体图像
+        return label_image
 
     def draw(self, surface):  # main_menu文件update调用
         for label in self.state_labels:  # 画游戏的选项文字 信息文字

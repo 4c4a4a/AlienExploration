@@ -4,6 +4,7 @@ from .. import setup
 from .. import tools
 from .. import constants as C
 from ..components import info
+from tkinter import messagebox
 
 
 class MainMenu:
