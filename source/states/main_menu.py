@@ -5,6 +5,7 @@ from .. import tools
 from .. import constants as C
 from ..components import info
 from tkinter import messagebox
+import tkinter
 
 
 class MainMenu:
@@ -43,10 +44,23 @@ class MainMenu:
         pygame.mixer.music.play(start=0.0)
 
     def update_cursor(self, keys):  # 游戏菜单选项功能 被update调用
+        # for event in pygame.event.get():
+        #     if event.type == pygame.KEYDOWN and event.KEY == pygame.K_RETURN:
+        #         pygame.mixer.music.stop()
+        #         self.reset_game_info()
+        #         self.finished = True
+        #     elif event.type == 1 and event.type != K_RETURN:
+        #         messagebox.showinfo("提示", "请按回车开始游戏")
+        key = sum(keys)
         if keys[pygame.K_RETURN]:  # 按下回车进入下一个状态
             pygame.mixer.music.stop()
             self.reset_game_info()
             self.finished = True
+        elif ~keys[pygame.K_RETURN] and key >= 1:
+            root = tkinter.Tk()
+            root.withdraw()
+            messagebox.showinfo("提示", "请按回车开始游戏!")
+            root.destroy()
 
     def update(self, surface, keys):  # tools调用的刷新函数
         self.update_cursor(keys)  # 封面栗子头 实际上是光标选择检测

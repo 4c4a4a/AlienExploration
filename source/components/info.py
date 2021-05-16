@@ -19,7 +19,7 @@ class Info:  # 信息实例 先在main_menu实例中的start中被创建
         elif self.state == 'load_screen':
             self.state_labels.append((self.create_label('X    {}'.format(self.game_info['lives'])), (380, 280)))  # 生命
             self.player_image = tools.get_image(setup.GRAPHICS['mario_bros'], 178, 32, 12, 16, (0, 0, 0), C.BG_MULTI)  # 任务图像
-            self.state_labels.append((self.create_label("--Shout out to control the character's jump--"), (30, 530)))
+            self.state_labels.append((self.create_label("____Shout out to control the character's jump!____"), (-30, 530)))
         elif self.state == 'game_over':
             self.state_labels.append((self.create_label('GAME OVER'), (290, 280)))
         elif self.state == 'win':

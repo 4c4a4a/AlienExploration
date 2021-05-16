@@ -4,6 +4,8 @@ from .. import constants as C
 import json
 import os
 from .voice import *
+from tkinter import messagebox
+import tkinter
 
 
 class Player(pygame.sprite.Sprite):
@@ -77,6 +79,12 @@ class Player(pygame.sprite.Sprite):
         self.current_time = pygame.time.get_ticks()
         self.volumn = getVolumn()
         self.handle_states(keys)  # 处理各种状态
+        key = sum(keys)
+        if ~keys[pygame.K_RETURN] and key >= 1:
+            root = tkinter.Tk()
+            root.withdraw()
+            messagebox.showinfo("提示", "大声喊出来控制角色跳跃!")
+            root.destroy()
 
     def handle_states(self, keys):
         self.can_jump_or_not(keys)  # 检测角色是否可以跳起
