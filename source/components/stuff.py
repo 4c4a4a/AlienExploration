@@ -2,6 +2,7 @@ import pygame
 
 
 class Item(pygame.sprite.Sprite):
+    """游戏物品精灵sprite，地面、柱体、阶梯"""
     def __init__(self, x, y, w, h, name):
         pygame.sprite.Sprite.__init__(self)
         self.image = pygame.Surface((w, h)).convert()

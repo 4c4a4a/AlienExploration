@@ -1,13 +1,17 @@
+"""存储游戏中的关键常量"""
+
+# 窗口尺寸
 SCREEN_W, SCREEN_H = 800, 600
 SCREEN_SIZE = (SCREEN_W, SCREEN_H)
 GROUND_HEIGHT = SCREEN_H - 62
 
+# 缩放大小
 BG_MULTI = 2.68
 PLAYER_MULTI = 2.9
 
+# 人物加速度
 GRAVITY = 1.0
 ANTI_GRAVITY = 0.3
 
-VOLUMN_THRESHOLD = 8000
-
-FONT = 'FixedSys.ttf'
+# 音量阈值
+VOLUMN_THRESHOLD = 10000

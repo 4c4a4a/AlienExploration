@@ -1,48 +1,52 @@
-# 工具和游戏主控
 import pygame
 import os
 
 
 class Game:
+    """游戏主循环控制"""
     def __init__(self, state_dict, start_state):
-        self.screen = pygame.display.get_surface()  # 创建图层
-        self.clock = pygame.time.Clock()  # 游戏计时器
-        self.keys = pygame.key.get_pressed()  # 获取按键
-        self.state_dict = state_dict  # 状态字典
-        self.state = self.state_dict[start_state]  # 初始化主菜单状态 在main_menu文件里 是一个值为类的字典
+        """初始化游戏窗口、时钟、状态、行为获取"""
+        self.screen = pygame.display.get_surface()
+        self.clock = pygame.time.Clock()
+        self.keys = pygame.key.get_pressed()
+        self.state_dict = state_dict
+        self.state = self.state_dict[start_state]
 
     def update(self):
-        if self.state.finished:  # 检查当前阶段是否完成
-            game_info = self.state.game_info  # 幅值当前阶段结束后游戏信息
-            next_state = self.state.next  # 幅值下一个状态
-            self.state.finished = False  # 将当前阶段状态结束标志改为假
-            self.state = self.state_dict[next_state]  # 更改状态为下一个状态
-            self.state.start(game_info)  # 调用当前状态函数 传入游戏信息
+        """游戏刷新函数，控制状态的切换"""
+        if self.state.finished:
+            game_info = self.state.game_info          # 游戏信息传递
+            next_state = self.state.next              # 状态切换
+            self.state.finished = False
+            self.state = self.state_dict[next_state]
+            self.state.start(game_info)               # 新状态开始
 
-        self.state.update(self.screen, self.keys)  # 传入图层和按键
+        self.state.update(self.screen, self.keys)
 
     def run(self):
+        """游戏主循环，获取游戏操作和控制刷新"""
         while True:
-            for event in pygame.event.get():  # 获取游戏操作情况
+            for event in pygame.event.get():              # 获取游戏操作情况
                 if event.type == pygame.QUIT:
                     pygame.display.quit()
                     quit()
-                elif event.type == pygame.KEYDOWN:  # 按下键盘
+                elif event.type == pygame.KEYDOWN:
                     self.keys = pygame.key.get_pressed()
-                elif event.type == pygame.KEYUP:  # 松开键盘
+                elif event.type == pygame.KEYUP:
                     self.keys = pygame.key.get_pressed()
 
-            self.update()  # 循环调用update 刷新当前阶段
+            self.update()                                 # 调用刷新函数，刷新状态
 
-            pygame.display.update()  # 屏幕刷新
+            pygame.display.update()                       # 显示刷新
             self.clock.tick(60)
 
 
-def load_graphics(path, accept=('.jpg', '.png', '.bmp', '.gif')):  # 获取图像 被setup文件里调用 赋值为GRAPHICS
+def load_graphics(path, accept=('.jpg', '.png', '.bmp', '.gif')):
+    """加载游戏图片资源"""
     graphics = {}
     for pic in os.listdir(path):
-        name, ext = os.path.splitext(pic)  # 文件名和后缀
-        if ext.lower() in accept:  # 防止获取错误文件
+        name, ext = os.path.splitext(pic)                       # 文件名与后缀分开赋值
+        if ext.lower() in accept:
             img = pygame.image.load(os.path.join(path, pic))
             if img.get_alpha():
                 img = img.convert_alpha()
@@ -53,6 +57,7 @@ def load_graphics(path, accept=('.jpg', '.png', '.bmp', '.gif')):  # 获取图�
 
 
 def get_image(sheet, x, y, width, height, colorkey, scale):
+    """画出图像"""
     image = pygame.Surface((width, height))
     image.blit(sheet, (0, 0), (x, y, width, height))  # 0,0 代表画到哪个位置, x,y,w,h 代表sheet里哪个区域要取出来
     image.set_colorkey(colorkey)
