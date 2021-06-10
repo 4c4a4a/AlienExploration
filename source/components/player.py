@@ -79,11 +79,11 @@ class Player(pygame.sprite.Sprite):
         self.volumn = getVolumn()
         self.handle_states(keys)
         key = sum(keys)
-        if ~keys[pygame.K_RETURN] and key >= 1:
-            root = tkinter.Tk()
-            root.withdraw()
-            messagebox.showinfo("提示", "大声喊出来控制角色跳跃!")
-            root.destroy()
+        # if ~keys[pygame.K_RETURN] and key >= 1:
+        #     root = tkinter.Tk()
+        #     root.withdraw()
+        #     messagebox.showinfo("提示", "大声喊出来控制角色跳跃!")
+        #     root.destroy()
 
     def handle_states(self, keys):
         """人物状态处理"""
