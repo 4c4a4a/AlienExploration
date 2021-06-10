@@ -6,7 +6,7 @@ pygame.font.init()
 
 
 class Info:
-    """游戏文字图像信息"""
+    """游戏文字信息绘制"""
     def __init__(self, state, game_info):
         """初始化设置，状态、当前信息、信息标签"""
         self.state = state

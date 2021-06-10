@@ -1,7 +1,7 @@
 import pygame
 import os
 import json
-from .. import tools, setup
+from .. import setup
 from .. import constants as C
 from ..components import info
 from ..components import player, stuff

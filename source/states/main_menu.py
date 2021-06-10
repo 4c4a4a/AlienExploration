@@ -1,5 +1,4 @@
 import pygame
-import os
 import tkinter
 from .. import setup
 from .. import tools

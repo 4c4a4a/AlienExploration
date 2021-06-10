@@ -10,7 +10,7 @@ class Game:
         self.clock = pygame.time.Clock()
         self.keys = pygame.key.get_pressed()
         self.state_dict = state_dict
-        self.state = self.state_dict[start_state]
+        self.state = self.state_dict[start_state]     # 创建目前状态下的对象
 
     def update(self):
         """游戏刷新函数，控制状态的切换"""
@@ -63,8 +63,4 @@ def get_image(sheet, x, y, width, height, colorkey, scale):
     image.set_colorkey(colorkey)
     image = pygame.transform.scale(image, (int(width*scale), int(height*scale)))
     return image
-
-
-
-
 
